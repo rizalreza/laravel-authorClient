@@ -18,6 +18,7 @@ class BookController extends Controller
          // Mendapatkan data author utk input select
           $apiAuthor = $client->request('GET','http://localhost:8080/api/author');
           $contentAuthor = json_decode($apiAuthor->getBody()->getContents());
+          // dd($books);
 	        
            // dd($contentAuthor);
 

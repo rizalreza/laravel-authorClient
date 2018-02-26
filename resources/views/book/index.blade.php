@@ -38,7 +38,7 @@
                       <td style="width:20%">{{ $book->synopsis }}</td> 
                       <td style="width:4%">  <a href="{{URL('book/' . $book->id . '/edit') }}" class="btn btn-xs btn-primary">Update</a>
                       </td> 
-                      <td style="width:4%">  <a href="{{URL("/delete/{$book->id}")}}" class="btn btn-xs btn-primary">Delete</a>
+                      <td style="width:4%">  <a href="{{URL("/book/delete/{$book->id}")}}" class="btn btn-xs btn-primary">Delete</a>
                       </td>
     
                     </tr>
