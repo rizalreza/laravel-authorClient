@@ -3,31 +3,31 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                  <center><h2> Index</h2></center>
-                </div>
-
                 <div class="panel-body">
+                  <center><h2> Index</h2></center><br>
+                  
                      <table class="table" >
-                          <thead>
+                      <?php $__currentLoopData = $authors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $author): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <th colspan="2"> Author : <?php echo e($author->name); ?></th>  
                             <tr>
-                              <th><center>Author</center></th>
                               <th><center>Title</center></th>
                               <th><center>Genres</center></th>
-                    
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                                 <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                  <td style="width:20%"><?php echo e($book->author_id); ?></td> 
-                                  <td style="width:20%"><?php echo e($book->title); ?></td>
-                                  <td style="width:15%"><?php echo e($book->genres); ?></td>
+                              <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                              <?php if($book->author_id == $author->id): ?>
+                              <tr>
+                                <td><center><?php echo e($book->title); ?></center></td> 
+                                <td><center><?php echo e($book->genres); ?></center></td> 
                                  
-                            </tr>
-                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                              </tr>
+                              <?php endif; ?>
+                              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                           
                           </tbody>
-                    
+                           
                      </table>
                 </div>
             </div>
