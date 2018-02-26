@@ -34,7 +34,7 @@
                       <td style="width:20%">{{ $author->nationality }}</td> 
                       <td style="width:4%">  <a href="{{URL('author/' . $author->id . '/edit') }}" class="btn btn-xs btn-primary">Update</a>
                       </td> 
-                      <td style="width:4%">  <a href="{{url("/delete/{$author->id}")}}" class="btn btn-xs btn-danger">Delete</a>
+                      <td style="width:4%">  <a href="{{url("/author/delete/{$author->id}")}}" class="btn btn-xs btn-danger">Delete</a>
                       </td>
     
                     </tr>

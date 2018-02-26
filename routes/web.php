@@ -24,7 +24,7 @@ Route::get('/book/create', 'BookController@createBook')->name('book.create');
 Route::post('/book/create', 'BookController@storeBook')->name('book.store');
 Route::get('/book/{id}/edit', 'BookController@editBook')->name('book.edit');
 Route::put('/book/update/{id}', 'BookController@updateBook')->name('book.update');
-Route::get('/delete/{id}', 'BookController@deleteBook')->name('deleteBook');
+Route::get('/book/delete/{id}', 'BookController@deleteBook')->name('deleteBook');
 
 
 Route::get('/author', 'AuthorController@indexAuthor')->name('author.index');
@@ -32,4 +32,4 @@ Route::get('/author/create', 'AuthorController@createAuthor')->name('author.crea
 Route::post('/author/create', 'AuthorController@storeAuthor')->name('author.store');
 Route::get('/author/{id}/edit', 'AuthorController@editAuthor')->name('author.edit');
 Route::put('/author/update/{id}', 'AuthorController@updateAuthor')->name('author.update');
-Route::get('/delete/{id}', 'AuthorController@deleteAuthor')->name('delete.Author');
+Route::get('/author/delete/{id}', 'AuthorController@deleteAuthor')->name('delete.Author');
