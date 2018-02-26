@@ -35,6 +35,10 @@ class HomeController extends Controller
 
         $books = json_decode($apiRequest->getBody()->getContents());
 
-        return view('home',['books' => $books]);
+         // Mendapatkan data author utk input select
+          $apiAuthor = $client->request('GET','http://localhost:8080/api/author');
+          $authors = json_decode($apiAuthor->getBody()->getContents());
+
+        return view('home',['books' => $books, 'authors' => $authors]);
     }
 }
